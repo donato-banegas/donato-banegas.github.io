@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!--  Barra de Navegacion   -->
+    <div class="topnav">
+        <button id="home-button" onclick="updatePage('home-page')">Home</button>
+        <button id="projects-button" onclick="updatePage('projects-page')">Projects</button>
+        <button id="about-me-button" onclick="updatePage('about-me-page')">About me</button>
+        <button id="dark-light-button" onclick="Dark_Light_Mode()" >Turn Light OFF</button>
+        <button id="change-language-button" onclick="changeLanguage()" >Change to Spanish</button>
+    </div>
+
+
+    <div id="home-page">
+
+        <div class="main-container">
+
+            <div class="profile-container">
+                <h1>Hello! My name is Donato Banegas</h1>
+                <img class="profile-picture" src="./img/profile.png">
+                
+                <p>Welcome to my portfolio!<br>
+                    I'm an Electronic Engineering student with a growing passion for Computer Science.<br>
+                    I'm currently in the 4th/5th year of my 6-year Electronic Engineering degree. Courses like
+                    'Computer Architecture' and 'Operating Systems & Networks' sparked my interest in programming
+                    and software development.This is why I'm transitioning my focus towards Computer Science.<br>
+                </p>
+
+            </div>
+
+        
+            <div class="interest-container">
+                <h1>About me.</h1>
+                <h2>Interest, Hobbys and more.</h2>
+
+                <h3>Videogames</h3>
+                <p>One of my first and most enduring hobbies has been video games. I spent countless hours playing different games on various consoles throughout my childhood and teenage years. While I don't play as much anymore, I remain fascinated by the video game industry. Now, I'm particularly interested in how innovation and technology are shaping the market, how hardware has evolved, and how projects have grown in size, scope, and investment.  I also find the success stories of smaller-scale indie games inspiring.
+                </p>
+
+                <h3>Literature</h3>
+                <p>While I don't read constantly, when I pick up a book, I get completely immersed in the story. I love delving into the author's craft, analyzing character development, symbolism, and narrative style.  Exploring the themes and hidden messages woven into the text is a fascinating journey for me.  A truly satisfying conclusion leaves me feeling fulfilled, with all the plot lines neatly tied up.
+                </p>
+
+                <h3>Fitness</h3>
+                <p>Over the past three years, I've discovered the vastness and complexity of the fitness industry. While information is abundant, not all of it is reliable. I've learned that nutrition plays a critical role in fitness and overall health, and that even moderate daily exercise can be sufficient for maintaining good health. Discipline and setting realistic goals are key to maintaining motivation. My fitness journey has taught me the importance of finding a balance between being active and eating healthy, and I'm excited to continue learning and growing on this journey.
+                </p>
+
+                <h3>Sports</h3>
+                <p>You might expect an Argentinean to be obsessed with fútbol (soccer), but that wasn't quite the case for me. While I never considered myself a big sports fan, my growing interest in fitness has led me to appreciate the dedication and work ethic of professional athletes. In particular, I've become fascinated by the world of boxing culture. It's not that I'm a die-hard boxing fan, but the Rocky films really resonated with me. They perfectly capture the discipline and relentless drive required to succeed, not only in sports, but in all things in life.
+                </p>
+
+                <h3>Politics and Economy</h3>
+                <p>Having lived in a country with economic instability, I've witnessed the impact of fluctuating prices and social conflicts firsthand. This experience sparked a curiosity in me to understand the cause-and-effect relationships at play. Analyzing these topics, along with the various theories that attempt to explain them, is a captivating exercise for me. Perhaps it's my engineering background that fuels this desire to optimize and find solutions within complex systems.</p>
+
+
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div id="projects-page">   
+        <h1> Projects Page </h1>
+    </div>
+
+
+    <div id="about-me-page">
+
+        <div class="education-container">
+            <h1>Education</h1>
+            <h2>Formal Education</h2>
+            <h3>Universidad Nacional de La Plata (UNLP)</h3>
+            <ul style="list-style-type:circle;">
+                <li> Electronics Engineering: 2017 - Present</li>
+            </ul>
+            <h3>Instituto Canossiano San José (ICSJ)</h3>
+            <ul style="list-style-type:circle;">
+                <li> High School Diploma in Natural Sciences: 2011 - 2017</li>
+                <li> Primary School Education: 2005 - 2011</li>
+            </ul>            
+        </div>
+
+        <div id="career-progress">
+            <table>
+                <tr>
+                  <th>Nombre de la Materia</th>
+                  <th>Aprobada</th>
+                  <th>Nota</th>
+                  <th>Fecha</th>
+                </tr>
+                <tr>
+                  <td>Matemáticas</td>
+                  <td>Sí</td>
+                  <td>8</td>
+                  <td>01/02/2022</td>
+                </tr>
+                <tr>
+                  <td>Física</td>
+                  <td>No</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <!-- Agrega más filas según sea necesario -->
+              </table>
+        </div>
+
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
