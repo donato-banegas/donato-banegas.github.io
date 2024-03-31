@@ -54,9 +54,6 @@ function updatePage(pageId){
   renderPage(currentPage);
 }
 
-
-
-
 // Function to change to Light or Dark Mode.
 function Dark_Light_Mode(){
   let toggleButtonId = document.getElementById('dark-light-button');

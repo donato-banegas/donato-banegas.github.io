@@ -39,27 +39,14 @@ body {
 */
 
 
-.main-container {
+.profile-container {
     display: grid;
+    grid-template-columns: 50% 50%;
     justify-content: center;
-
+    align-items: center;
     text-decoration: none;
-    grid-template-columns: 30% 30% 40%;
-
     border: 2px solid grey;
     margin: 20px;
-}
-
-
-.profile-container {
-    margin: 20px;
-}
-
-
-
-.interest-container {
-    margin: 20px;
-
 }
 
 .profile-picture {
@@ -69,44 +56,66 @@ body {
     width: 50%;
     border-radius: 100%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
+    margin: 50px auto;
 }
+
+.profile-description {
+    justify-content: center;
+    align-items: center;
+    margin-right:50px;
+}
+
+.profile-description p {
+    margin: 20px;
+}
+
+.profile-description h1 {
+    text-align: center;
+    margin: 20px;
+}
+
+
 
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ABOUT ME.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
-#about-me-page {
-    display: flex;
-    
-    margin: 20px;
-    border: 2px grey solid; 
-}
 
 .education-container {
-    flex:1;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 2px solid grey;
     margin: 20px;
 }
 
-#career-progress {
-    flex:2;
-
+.formal-education {
+    justify-content: center;
+    align-items: center;
+    margin:50px;
     border: 2px grey solid; 
 
 }
 
-#career-progress table {
+.career-progress {
+    margin:50px;
+    border: 2px grey solid; 
+}
+
+.career-progress table {
 
 }
 
-#career-progress th, td {
+.career-progress th, td {
     border: 1px solid #dddddd;
     padding: 8px;
     text-align: left;
 }
 
-#career-progress th {
+.career-progress th {
     background-color: #f2f2f2;
 }
 
