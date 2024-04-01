@@ -48,6 +48,7 @@
 
     <div id="projects-page">   
         <h1> Projects Page </h1>
+        <p> Under Construction</p>
     </div>
 
 
@@ -70,7 +71,7 @@
             <div class="career-progress">
                 <h1>Ingeniería Electrónica</h1>
                 <h2>Plan 2002</h2>
-                <table>
+                <table id="tablaMaterias">
                     <tr>
                         <th>Nombre de la Materia</th>
                         <th>Aprobada</th>
@@ -265,7 +266,7 @@
                     </tr>
                     <tr>
                         <td>Control y Servomecanismos A</td>
-                        <td>Sí</td>
+                        <td>No</td>
                         <td>-</td>
                         <td>-</td>
                     </tr>
@@ -278,8 +279,8 @@
                     <tr>
                         <td>Ingeniería Legal</td>
                         <td>Sí</td>
-                        <td>Aprobado</td>
-                        <td>12/03/2020</td>
+                        <td>8</td>
+                        <td>14/08/2021</td>
                     </tr>
                     <tr>
                         <td>Optativa I: Arquitectura de Computadoras</td>
@@ -323,8 +324,16 @@
                         <td>-</td>
                         <td>-</td>
                     </tr>
+                    <tr>
+                        <td>Idioma: Inglés</td>
+                        <td>Sí</td>
+                        <td>Aprobado</td>
+                        <td>12/03/2020</td>
+                    </tr>
                 </table>
-                <progress>Career Progress</progress>
+                <progress id="progressBar" value="0" max="100">Career Progress</progress>
+                <p>Progreso actual: <span id="progressValue"></span>%</p>
+                <p>Promedio de Notas: <span id="promedioNotas"></span></p>
             </div>
         </div>
 
