@@ -92,48 +92,43 @@ function changeLanguage(){
 }
 
 function calculateCareerProgress(){
-  // Obtener todas las filas de la tabla de materias
-  let filas = document.querySelectorAll("#tablaMaterias tr");
-  let totalMaterias = filas.length - 1; // Restamos 1 porque la primera fila es el encabezado
+  // Get all rows from the subject table
+  let rows = document.querySelectorAll("#subject-table tr");
+  let totalMaterias = rows.length - 1; // We subtract 1 because the first row is the header
 
-  // Contador para llevar la cuenta de las materias aprobadas
-  let materiasAprobadas = 0;
-  let sumaNotas = 0;
+  // Counters to keep track of approved subjects and sum for the average.
+  let approvedSubjects = 0;
+  let sumNotes = 0;
 
   // Iterar sobre cada fila excepto la primera (encabezado)
-  for (let i = 1; i < filas.length; i++) {
+  for (let i = 1; i < rows.length; i++) {
     // Obtener la celda correspondiente a "Aprobada" de la fila actual
-    let celdaAprobada = filas[i].querySelectorAll("td")[1];
-    let celdaNota = filas[i].querySelectorAll("td")[2];
+    let cellApproved = rows[i].querySelectorAll("td")[1];
+    let cellNote = rows[i].querySelectorAll("td")[2];
             
     // Verificar si la materia está aprobada (si contiene "Sí")
-    if (celdaAprobada.textContent.trim() === "Sí") {
-      materiasAprobadas++;
+    if (cellApproved.textContent.trim() === "Sí") {
+      approvedSubjects++;
       // Verificar si hay una nota o si la materia está aprobada sin nota
-      if (celdaNota.textContent.trim() !== "Aprobado" && celdaNota.textContent.trim() !== "-") {
-          sumaNotas += parseInt(celdaNota.textContent.trim());
+      if (cellNote.textContent.trim() !== "Aprobado" && cellNote.textContent.trim() !== "-") {
+        sumNotes += parseInt(cellNote.textContent.trim());
       }
     }
   }
 
-  // Calcular el porcentaje de progreso
+  // Calcular el porcentaje de progreso y el promedio.
   let porcentajeProgreso = (materiasAprobadas / totalMaterias) * 100;
-
-  // Calcular el promedio de notas
   let promedioNotas = (sumaNotas / materiasAprobadas).toFixed(2);
 
-  // Actualizar la barra de progreso
+  // Obtener elementos del HTML.
   let progressBar = document.getElementById('progressBar');
-  progressBar.value = porcentajeProgreso;
-
   let progressValue = document.getElementById('progressValue');
-  progressValue.textContent = Math.round(porcentajeProgreso);
-
-  // Mostrar el promedio de notas
   let promedioNotasElement = document.getElementById('promedioNotas');
+
+  // Actualizar los contenidos.
+  progressBar.value = porcentajeProgreso;
+  progressValue.textContent = Math.round(porcentajeProgreso);
   promedioNotasElement.textContent = promedioNotas;
-
-
 }
 
 
