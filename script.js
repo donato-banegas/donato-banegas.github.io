@@ -7,7 +7,7 @@ function updateButtonColor(pageId) {
 
   buttons.forEach((button, index) => {
     // Reiniciamos el color de fondo solo de los primeros tres botones
-    if (index < 3) {
+    if (index < 2) {
       button.style.backgroundColor = "white";
     }
   });
