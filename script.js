@@ -2,7 +2,6 @@ let nightMode = false;
 let currentPage = "home-page";
 let currentLanguage = "English";
 
-
 function updateButtonColor(pageId) {
   let buttons = document.querySelectorAll(".topnav button");
 
@@ -29,7 +28,7 @@ function renderPage(pageId) {
   // Oculta todas las páginas
   let homePage = document.getElementById("home-page");
   let projectsPage = document.getElementById("projects-page");
-  let aboutMePage = document.getElementById("about-me-page");
+  let educationPage = document.getElementById("education-page");
   
   if (homePage) {
     homePage.style.display = "none";
@@ -37,8 +36,8 @@ function renderPage(pageId) {
   if (projectsPage) {
     projectsPage.style.display = "none";
   }
-  if (aboutMePage) {
-    aboutMePage.style.display = "none";
+  if (educationPage) {
+    educationPage.style.display = "none";
   }
   
   // Muestra la página deseada
@@ -81,6 +80,7 @@ function updateVersant(){
 
 function Dark_Light_Mode(){
   let toggleButtonId = document.getElementById('dark-light-button');
+
 
   // Cambiar el estilo del botón
   if (nightMode == true) {
@@ -168,19 +168,27 @@ function calculateCareerProgress(){
     }
   }
 
-  // Calculate the percentage of progress and the average.
-  let percentageProgress = (approvedSubjects / totalSubjects) * 100;
-  let averageGrade = (sumGrades / approvedSubjects).toFixed(2);
+  // Calculate the average with 2 significant digits
+  let averageGrade = (sumGrades / approvedSubjects).toFixed(2);;
+  let percentageProgress = (approvedSubjects / totalSubjects) *100;
 
-  // Get elements from the HTML.
-  let progressBar = document.getElementById('progressBar');
-  let progressValue = document.getElementById('progressValue');
-  let averageGradeElement = document.getElementById('averageGrade');
+  // Update the elements of the ES section.
+  let progressBarES = document.getElementById('progressBarES');
+  let progressValueES = document.getElementById('span-progress-value-ES');
+  let averageGradeES = document.getElementById('span-average-grade-ES');
 
-  // Update the contents.
-  progressBar.value = percentageProgress;
-  progressValue.textContent = Math.round(percentageProgress);
-  averageGradeElement.textContent = averageGrade;
+  progressBarES.value = percentageProgress;
+  progressValueES.textContent = Math.round(percentageProgress);
+  averageGradeES.textContent = averageGrade;
+
+  // Update the elements of the EN section.
+  let progressBarEN = document.getElementById('progressBarEN');
+  let progressValueEN = document.getElementById('span-progress-value-EN');
+  let averageGradeEN = document.getElementById('span-average-grade-EN');
+
+  progressBarEN.value = percentageProgress;
+  progressValueEN.textContent = Math.round(percentageProgress);
+  averageGradeEN.textContent = averageGrade;
 }
 
 
