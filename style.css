@@ -8,6 +8,13 @@ body {
     color: var(--body-text-color);
 }
 
+.en {               /* Por defecto lo ponemos en inglés. */
+    display:inline;
+}
+
+.es {
+    display:none;
+}
 
 
 /*
@@ -22,6 +29,7 @@ body {
 
 .topnav button {
     float: left;
+    width: 5% auto;
     background-color: white;
     color: black;
     text-align: center;
@@ -95,10 +103,16 @@ body {
     justify-content: center;
     align-items: center;
     margin: 2%;
+    padding: 5%;
     border: 2px grey solid;
 }
 
+#versant1, #versant2 {
+    width: 100%;
+}
+
 .career-progress {
+    padding: 5%;
     margin:2%;
     border: 2px grey solid; 
 }
@@ -115,7 +129,10 @@ body {
 }
 
 .career-progress th {
-    background-color: #f2f2f2;
+
+    background-color:#1a1a1a;
+    color: #cccccc;
+    /*background-color: #f2f2f2;*/
 }
 
 .career-progress progress{

@@ -14,17 +14,15 @@
         <button id="projects-button" onclick="updatePage('projects-page')">Projects</button>
         <button id="about-me-button" onclick="updatePage('about-me-page')">About me</button>
         <button id="dark-light-button" onclick="Dark_Light_Mode()" >Turn Light OFF</button>
-        <button id="change-language-button" onclick="changeLanguage()" >Change to Spanish</button>
+        <button id="change-language-button" onclick="changeLanguage()" >Cambiar a Español</button>
     </div>
 
 
     <div id="home-page">
-
         <div class="profile-container">
-
             <img class="profile-picture" src="./img/profile.png">
-
             <div class="profile-description">
+                <div class = "en">
                 <h1>Hello! My name is Donato Banegas</h1>               
                 <p> 
                 I'm an Electronic Engineering student with a growing passion for Computer Science.
@@ -39,10 +37,25 @@
                 As a result, I've been able to approach new subjects in computer science with greater confidence and understanding.
                 This familiarity has made it easier for me to grasp concepts and adapt to new challenges.
                 </p>
-            </div>           
+                </div>
 
-        </div>
-        
+                <div class = "es">
+                <h1>¡Hola! Mi nombre es Donato Banegas</h1>               
+                <p> 
+                    Soy estudiante de Ingeniería Electrónica con una creciente pasión por la Informática.
+                    Actualmente estoy en 4º/5º año de mi carrera de Ingeniería Electrónica de 6 años.
+                    Materias como 'Arquitectura de Computadores' y 'Sistemas Operativos y Redes' despertaron mi
+                    Interés por la programación y el desarrollo de software.
+                    Es por eso que estoy cambiando mi enfoque hacia Ciencias de la Computación.<br><br>
+    
+                    Últimamente he estado leyendo sobre POO, C++ y desarrollo web (este portafolio es una consecuencia de eso).
+                    Descubrí que mi experiencia en programación C y trabajo en entornos más restringidos
+                    con microcontroladores me ha proporcionado una base sólida.
+                    Como resultado, he podido abordar nuevos temas de informática con mayor confianza y comprensión.
+                </p>
+                </div>
+            </div> 
+        </div>        
     </div>
 
 
@@ -56,22 +69,51 @@
 
         <div class="education-container">
             <div class="formal-education">
+                <div class = "en">
                 <h1>Education</h1>
                 <h2>Formal Education</h2>
-                <h3>Universidad Nacional de La Plata (UNLP)</h3>
+                <h3>National University of La Plata(UNLP)</h3>
                 <ul style="list-style-type:circle;">
                     <li> Electronics Engineering: 2017 - Present</li>
                 </ul>
-                <h3>Instituto Canossiano San José (ICSJ)</h3>
+                <h3>Institute Canossiano San José (ICSJ)</h3>
                 <ul style="list-style-type:circle;">
                     <li> High School Diploma in Natural Sciences: 2011 - 2017</li>
                     <li> Primary School Education: 2005 - 2011</li>
                 </ul>
+                <h1>English Proficiency</h1>
+                <p>I have accumulated six years of English education during my high school years. From an early age, I immersed myself in the language thanks to my interest in video games and my desire to understand their content. Additionally, I regularly consume movies with audio and subtitles in English, as well as content from English-speaking YouTubers.</p>
+                <p>Currently, I am constantly immersed in the language, as I read reviews and opinions of series and movies in English on a daily basis. Due to my career, I find myself in the need to consult bibliography and technical documents written in English continuously.</p>
+                <p>During my time at university, I took a proficiency exam in English focused on technical reading comprehension. Furthermore, during the selection process at Techint, I underwent a more comprehensive exam that evaluated my skills in reading, listening, and writing in English. Below, the results obtained in said exam are detailed.</p>
+                </div>
+
+                <div class = "es">
+                    <h1>Educación</h1>
+                    <h2>Educación Formal</h2>
+                    <h3>Universidad Nacional de La Plata (UNLP)</h3>
+                    <ul style="list-style-type:circle;">
+                        <li> Ingeniería Electrónica: 2017 - Presente</li>
+                    </ul>
+                    <h3>Instituto Canossiano San José (ICSJ)</h3>
+                    <ul style="list-style-type:circle;">
+                        <li> Educación Secundaria: Bachiller en Ciencias Naturales: 2011 - 2017</li>
+                        <li> Educación Primaria: 2005 - 2011</li>
+                    </ul>
+
+                    <h1>Nivel de Inglés</h1>
+                    <p>He acumulado seis años de educación en inglés durante mis años de secundaria. Desde una edad temprana, me sumergí en el idioma gracias a mi interés en los videojuegos y mi deseo de entender su contenido. Además, consumo regularmente películas con audio y subtítulos en inglés, así como contenido de youtubers de habla inglesa.</p>
+                    <p>En la actualidad, estoy constantemente inmerso en el idioma, ya que leo reseñas y opiniones de series y películas en inglés de manera cotidiana. Debido a mi carrera, me veo en la necesidad de consultar bibliografía y documentos técnicos escritos en inglés de forma continua.</p>
+                    <p>Durante mi tiempo en la universidad, rendí un exámen de suficiencia en inglés centrado en la comprensión de lectura técnica. Además, durante el proceso de selección en Techint, me sometí a un examen más completo que evaluaba mis habilidades en lectura, escucha y escritura en inglés. A continuación, se detallan los resultados obtenidos en dicho examen.</p>
+                </div>
+
+                <img id="versant1" src="./img/versant1-en-l.png"> 
+                <img id="versant2" src="./img/versant2-en-l.png">
+
             </div>            
             <div class="career-progress">
                 <h1>Ingeniería Electrónica</h1>
                 <h2>Plan 2002</h2>
-                <table id="tablaMaterias">
+                <table id="subject-table">
                     <tr>
                         <th>Nombre de la Materia</th>
                         <th>Aprobada</th>
@@ -332,8 +374,8 @@
                     </tr>
                 </table>
                 <progress id="progressBar" value="0" max="100">Career Progress</progress>
-                <p>Progreso actual: <span id="progressValue"></span>%</p>
-                <p>Promedio de Notas: <span id="promedioNotas"></span></p>
+                <p>Current progress: <span id="progressValue"></span>%</p>
+                <p>Average Grade: <span id="averageGrade"></span></p>
             </div>
         </div>
 

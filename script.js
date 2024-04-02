@@ -1,5 +1,7 @@
 let nightMode = false;
 let currentPage = "home-page";
+let currentLanguage = "English";
+
 
 function updateButtonColor(pageId) {
   let buttons = document.querySelectorAll(".topnav button");
@@ -54,7 +56,29 @@ function updatePage(pageId){
   renderPage(currentPage);
 }
 
-// Function to change to Light or Dark Mode.
+function updateVersant(){
+  // Mostrar Prueba Versant correcta.
+  let versantTest1 = document.getElementById("versant1");
+  let versantTest2 = document.getElementById("versant2");
+  if (currentLanguage === "English") {
+    if (nightMode) {
+      versantTest1.src = "./img/versant1-en-d.png";
+      versantTest2.src = "./img/versant2-en-d.png";
+    } else {
+      versantTest1.src = "./img/versant1-en-l.png";
+      versantTest2.src = "./img/versant2-en-l.png";
+    }
+  } else {  // Entonces es "Spanish"
+    if (nightMode) {
+      versantTest1.src = "./img/versant1-es-d.png";
+      versantTest2.src = "./img/versant2-es-d.png";
+    } else {
+      versantTest1.src = "./img/versant1-es-l.png";
+      versantTest2.src = "./img/versant2-es-l.png";
+    }
+  }
+}
+
 function Dark_Light_Mode(){
   let toggleButtonId = document.getElementById('dark-light-button');
 
@@ -64,7 +88,6 @@ function Dark_Light_Mode(){
   } else {
     toggleButtonId.style.backgroundColor = 'yellow';
   }
-
 
   // Cambiar el estilo del cuerpo (body)
   let body = document.body;
@@ -85,10 +108,39 @@ function Dark_Light_Mode(){
 
   // Invert the state.
   nightMode = !nightMode;
+
+  updateVersant();
 };
 
 function changeLanguage(){
-  console.log("You changed the Language...!");
+  let languageButton = document.getElementById('change-language-button');
+
+  // Change the Text.
+  if(languageButton.textContent === "Cambiar a Español"){
+    languageButton.textContent = "Change to English";
+    currentLanguage = "Spanish";
+    // Ocultar contenido en inglés y mostrar contenido en español
+    document.querySelectorAll('.en').forEach(element => {
+      element.style.display = 'none';
+    });
+    document.querySelectorAll('.es').forEach(element => {
+      element.style.display = 'block';
+    });
+
+  } else {
+    languageButton.textContent = "Cambiar a Español";
+    currentLanguage = "English";
+    // Ocultar contenido en español y mostrar contenido en inglés
+    document.querySelectorAll('.es').forEach(element => {
+      element.style.display = 'none';
+    });
+    document.querySelectorAll('.en').forEach(element => {
+      element.style.display = 'block';
+    });
+  }
+
+  updateVersant();
+  updatePage(currentPage);
 }
 
 function calculateCareerProgress(){
