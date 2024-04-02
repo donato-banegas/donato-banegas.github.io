@@ -94,41 +94,41 @@ function changeLanguage(){
 function calculateCareerProgress(){
   // Get all rows from the subject table
   let rows = document.querySelectorAll("#subject-table tr");
-  let totalMaterias = rows.length - 1; // We subtract 1 because the first row is the header
+  let totalSubjects = rows.length - 1; // We subtract 1 because the first row is the header
 
   // Counters to keep track of approved subjects and sum for the average.
   let approvedSubjects = 0;
-  let sumNotes = 0;
+  let sumGrades = 0;
 
-  // Iterar sobre cada fila excepto la primera (encabezado)
+  // Iterate over every row except the first (header)
   for (let i = 1; i < rows.length; i++) {
-    // Obtener la celda correspondiente a "Aprobada" de la fila actual
+    // Get the cell corresponding to "Aprobado" of the current row
     let cellApproved = rows[i].querySelectorAll("td")[1];
-    let cellNote = rows[i].querySelectorAll("td")[2];
+    let cellGrade = rows[i].querySelectorAll("td")[2];
             
-    // Verificar si la materia está aprobada (si contiene "Sí")
+    // Check if the subject is approved (if it contains "Sí")
     if (cellApproved.textContent.trim() === "Sí") {
       approvedSubjects++;
-      // Verificar si hay una nota o si la materia está aprobada sin nota
-      if (cellNote.textContent.trim() !== "Aprobado" && cellNote.textContent.trim() !== "-") {
-        sumNotes += parseInt(cellNote.textContent.trim());
+      // Check if there is a grade or if the subject is approved without a grade
+      if (cellGrade.textContent.trim() !== "Aprobado" && cellGrade.textContent.trim() !== "-") {
+        sumGrades += parseInt(cellGrade.textContent.trim());
       }
     }
   }
 
-  // Calcular el porcentaje de progreso y el promedio.
-  let porcentajeProgreso = (materiasAprobadas / totalMaterias) * 100;
-  let promedioNotas = (sumaNotas / materiasAprobadas).toFixed(2);
+  // Calculate the percentage of progress and the average.
+  let percentageProgress = (approvedSubjects / totalSubjects) * 100;
+  let averageGrade = (sumGrades / approvedSubjects).toFixed(2);
 
-  // Obtener elementos del HTML.
+  // Get elements from the HTML.
   let progressBar = document.getElementById('progressBar');
   let progressValue = document.getElementById('progressValue');
-  let promedioNotasElement = document.getElementById('promedioNotas');
+  let averageGradeElement = document.getElementById('averageGrade');
 
-  // Actualizar los contenidos.
-  progressBar.value = porcentajeProgreso;
-  progressValue.textContent = Math.round(porcentajeProgreso);
-  promedioNotasElement.textContent = promedioNotas;
+  // Update the contents.
+  progressBar.value = percentageProgress;
+  progressValue.textContent = Math.round(percentageProgress);
+  averageGradeElement.textContent = averageGrade;
 }
 
 
