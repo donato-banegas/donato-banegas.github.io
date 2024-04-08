@@ -1,13 +1,15 @@
-let nightMode = false;
+let lightState = "ON"; // Estado inicial de la luz
 let currentPage = "home-page";
-let currentLanguage = "English";
+let currentLanguage = "english";
+
+console.log(lightState);
 
 function updateButtonColor(pageId) {
   let buttons = document.querySelectorAll(".topnav button");
 
   buttons.forEach((button, index) => {
-    // Reiniciamos el color de fondo solo de los primeros tres botones
-    if (index < 2) {
+    // Reiniciamos el color de fondo solo de los primeros cuatro botones
+    if (index < 4) {
       button.style.backgroundColor = "white";
     }
   });
@@ -25,121 +27,129 @@ function updateButtonColor(pageId) {
 }
 
 function renderPage(pageId) {
-  // Oculta todas las páginas
-  let homePage = document.getElementById("home-page");
-  let projectsPage = document.getElementById("projects-page");
-  let educationPage = document.getElementById("education-page");
+
+  let elementIds = ["home-page", "education-page", "proyects-page", "inicio-page","educacion-page","proyectos-page","skills-page","habilidades-page"];
+
+  // Ocultar todos los elementos de la lista
+  elementIds.forEach(function(elementId) {
+    let element = document.getElementById(elementId);
+    if (element) {
+      element.style.display = "none";
+    } else {
+      console.error("No se encontró ningún elemento con el ID proporcionado:", elementId);
+    }
+  });
   
-  if (homePage) {
-    homePage.style.display = "none";
-  }
-  if (projectsPage) {
-    projectsPage.style.display = "none";
-  }
-  if (educationPage) {
-    educationPage.style.display = "none";
-  }
-  
-  // Muestra la página deseada
-  let currentPageElement = document.getElementById(pageId);
-  if (currentPageElement) {
-    currentPageElement.style.display = "block";
+  // Ahora hay que mostrar en pantalla.
+  let pageElement = document.getElementById(pageId);
+  if (pageElement) {
+    // Verificar el estado actual de visibilidad del elemento y cambiarlo
+    if (pageElement.style.display === "none") {
+      pageElement.style.display = "block"; // Si está oculto, mostrarlo
+    } else {
+      pageElement.style.display = "none"; // Si está visible, ocultarlo
+    }
   } else {
-    console.error("No se encontró ningún elemento con el ID proporcionado:", pageId);
+    console.error("No se encontró ningún elemento con el ID proporcionado:", elementId);
+  }
+}
+
+function translateId(pageId){
+  if(currentLanguage === "spanish"){
+    switch(pageId){ // Hay que traducir.
+      case "home-page":
+        return "inicio-page";
+      case "education-page":
+        return "educacion-page";
+      case "proyects-page":
+        return "proyectos-page";
+      case "skills-page":
+        return "habilidades-page";
+    }
+  } else {
+    return pageId;
   }
 }
 
 function updatePage(pageId){
-  currentPage = pageId;
-  updateButtonColor(currentPage);
-  renderPage(currentPage);
-}
-
-function updateVersant(){
-  // Mostrar Prueba Versant correcta.
-  let versantTest1 = document.getElementById("versant1");
-  let versantTest2 = document.getElementById("versant2");
-  if (currentLanguage === "English") {
-    if (nightMode) {
-      versantTest1.src = "./img/versant1-en-d.png";
-      versantTest2.src = "./img/versant2-en-d.png";
-    } else {
-      versantTest1.src = "./img/versant1-en-l.png";
-      versantTest2.src = "./img/versant2-en-l.png";
-    }
-  } else {  // Entonces es "Spanish"
-    if (nightMode) {
-      versantTest1.src = "./img/versant1-es-d.png";
-      versantTest2.src = "./img/versant2-es-d.png";
-    } else {
-      versantTest1.src = "./img/versant1-es-l.png";
-      versantTest2.src = "./img/versant2-es-l.png";
-    }
-  }
-}
-
-function Dark_Light_Mode(){
-  let toggleButtonId = document.getElementById('dark-light-button');
-
-
-  // Cambiar el estilo del botón
-  if (nightMode == true) {
-    toggleButtonId.style.backgroundColor = 'white';
-  } else {
-    toggleButtonId.style.backgroundColor = 'yellow';
-  }
-
-  // Cambiar el estilo del cuerpo (body)
-  let body = document.body;
-  if (nightMode == true) {
-    body.style.backgroundColor = 'white';
-    body.style.color = 'black';  
-  } else {
-    body.style.backgroundColor = 'black';
-    body.style.color = 'white';
-  }
-
-  // Change the Text.
-  if(toggleButtonId.textContent === "Turn Light ON"){
-    toggleButtonId.textContent = "Turn Light OFF ";
-  } else {
-    toggleButtonId.textContent = "Turn Light ON";
-  }
-
-  // Invert the state.
-  nightMode = !nightMode;
-
+  currentPage = pageId; // Mantenemos siempre almacenada la pagina actual en una variable.
   updateVersant();
-};
+  updateButtonColor(currentPage);
+  showLanguageContent(currentLanguage);  
+  let translatedId = translateId(pageId);
+  renderPage(translatedId);
+}
+
+function showLanguageContent(language) {
+  let englishDiv = document.getElementById("en");
+  let spanishDiv = document.getElementById("es");
+
+  if (language === "english") {
+    englishDiv.style.display = "block";
+    spanishDiv.style.display = "none";
+    console.log("Actualmente deberías estar viendo: inglés");
+  } else if (language === "spanish") {
+    englishDiv.style.display = "none";
+    spanishDiv.style.display = "block";
+    console.log("Actualmente deberías estar viendo: español");
+  }
+}
+
+function updateVersant() {
+  let versantTests = document.querySelectorAll(".versant1, .versant2"); // Seleccionamos los elementos con las clases "versant1" y "versant2"
+  let languagePrefix = currentLanguage === "english" ? "en" : "es";
+  let lightModeSuffix = lightState === "ON" ? "-l.png" : "-d.png";
+  
+  versantTests.forEach(function(versantTest) {
+    let imageName = versantTest.classList.contains("versant1") ? "versant1" : "versant2"; // Determinamos si es versant1 o versant2
+    versantTest.src = `./img/${imageName}-${languagePrefix}${lightModeSuffix}`; // Construimos la ruta de la imagen
+  });
+}
 
 function changeLanguage(){
-  let languageButton = document.getElementById('change-language-button');
 
-  // Change the Text.
-  if(languageButton.textContent === "Cambiar a Español"){
-    languageButton.textContent = "Change to English";
-    currentLanguage = "Spanish";
-    // Ocultar contenido en inglés y mostrar contenido en español
-    document.querySelectorAll('.en').forEach(element => {
-      element.style.display = 'none';
-    });
-    document.querySelectorAll('.es').forEach(element => {
-      element.style.display = 'block';
-    });
-
-  } else {
-    languageButton.textContent = "Cambiar a Español";
-    currentLanguage = "English";
-    // Ocultar contenido en español y mostrar contenido en inglés
-    document.querySelectorAll('.es').forEach(element => {
-      element.style.display = 'none';
-    });
-    document.querySelectorAll('.en').forEach(element => {
-      element.style.display = 'block';
-    });
+  if (currentLanguage === "english") {
+    // Cambiar a español
+    currentLanguage = "spanish";
+    document.getElementById("home-button").innerText = "Inicio";
+    document.getElementById("education-button").innerText = "Educación";
+    document.getElementById("skills-button").innerText = "Habilidades";
+    document.getElementById("proyects-button").innerText = "Proyectos";
+    document.getElementById("dark-light-button").innerText = lightState === "ON" ? "Apagar luz" : "Encender luz";
+    document.getElementById("change-language-button").innerText = "Switch to English";
+  } else if (currentLanguage === "spanish") {
+    // Cambiar a inglés
+    currentLanguage = "english";
+    document.getElementById("home-button").innerText = "Home";
+    document.getElementById("education-button").innerText = "Education";
+    document.getElementById("skills-button").innerText = "Skills";
+    document.getElementById("proyects-button").innerText = "Proyects";
+    document.getElementById("dark-light-button").innerText = lightState === "ON" ? "Turn Light OFF" : "Turn Light ON";
+    document.getElementById("change-language-button").innerText = "Cambiar a Español";
   }
+  updatePage(currentPage);
+}
 
-  updateVersant();
+function toggleLight(){
+  let toggleButtonId = document.getElementById("dark-light-button");
+  let body = document.body;
+
+  // Cambiar el estilo del botón
+  toggleButtonId.style.backgroundColor = (lightState === "ON") ? 'yellow' : 'white';
+
+  // Cambiar el estilo del cuerpo (body)
+  body.style.backgroundColor = (lightState === "ON") ? 'dimgray' : 'whitesmoke';
+  body.style.color = (lightState === "ON") ? 'whitesmoke' : 'black';
+
+  // Cambiar el texto del botón
+  if (currentLanguage === "english") {
+    toggleButtonId.textContent = (lightState === "ON") ? "Turn Light ON" : "Turn Light OFF";
+  } else if (currentLanguage === "spanish") {
+    toggleButtonId.textContent = (lightState === "ON") ? "Encender Luz" : "Apagar Luz";
+  }
+  // Cambiar el estado de la luz
+  lightState = (lightState === "ON") ? "OFF" : "ON";
+
   updatePage(currentPage);
 }
 
@@ -190,7 +200,6 @@ function calculateCareerProgress(){
   progressValueEN.textContent = Math.round(percentageProgress);
   averageGradeEN.textContent = averageGrade;
 }
-
 
 updatePage(currentPage);
 calculateCareerProgress();

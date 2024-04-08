@@ -3,9 +3,10 @@ body {
     font-size: 17px;
     justify-content: center;
     text-align: justify;
-
+/*
     background-color: var(--body-bg-color);
     color: var(--body-text-color);
+*/
 }
 
 .en {               /* Por defecto lo ponemos en inglés. */
@@ -29,7 +30,9 @@ body {
 
 .topnav button {
     float: left;
-    width: 5% auto;
+    min-width: 20ch;
+    width: 25ch auto; /*
+    width: 5% auto;*/
     background-color: white;
     color: black;
     text-align: center;
@@ -63,6 +66,7 @@ body {
     align-items: center;
     width: 50%;
     border-radius: 100%;
+    border: 2px solid rgba(0.2, 0.2, 0.2, 0.5);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     margin: 50px auto;
 }
@@ -86,7 +90,7 @@ body {
 
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ABOUT ME.
+        EDUCATION.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
@@ -95,8 +99,7 @@ body {
     grid-template-columns: 50% 50%;
     justify-content: center;
     text-decoration: none;
-    /*border: 2px solid grey;*/
-    margin: 20px;
+    margin: 1% auto;
 }
 
 .formal-education {
@@ -107,8 +110,9 @@ body {
     /*border: 2px grey solid;*/
 }
 
-#versant1, #versant2 {
+.versant1, .versant2 {
     width: 100%;
+    border: 5px grey solid;
 }
 
 .career-progress {
@@ -129,7 +133,6 @@ body {
 }
 
 .career-progress th {
-
     background-color:#1a1a1a;
     color: #cccccc;
     /*background-color: #f2f2f2;*/
@@ -142,3 +145,67 @@ body {
     height:50px;
 }
 
+/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PROYECTS.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+
+/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        SKILLS.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.skills-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.skills-table {
+    border-color: grey;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    margin: auto;
+    margin-bottom: 20px; /* Agregamos un margen inferior para separar las tablas */
+    border-collapse: collapse; /* Para colapsar los bordes de las celdas */
+    border-spacing: 0; /* Para asegurar que no haya espacio entre las celdas */
+}
+
+.column {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.certificate {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        BOTTOM BAR.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.bottom-bar {
+    /*position: fixed;*/
+    overflow: hidden;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+}
+
+.bottom-bar img{
+    float: left;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    max-height: 40px;
+}

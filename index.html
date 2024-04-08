@@ -1,116 +1,54 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Donato Banegas Website</title>
     <link rel="stylesheet" href="style.css" />
+    <title>Pruebas</title>
 </head>
-
 <body>
 
-    <!--  Barra de Navegacion   -->
     <div class="topnav">
         <button id="home-button" onclick="updatePage('home-page')">Home</button>
-<!--    <button id="projects-button" onclick="updatePage('projects-page')">Projects</button>            En construccion.-->
         <button id="education-button" onclick="updatePage('education-page')">Education</button>
-        <button id="dark-light-button" onclick="Dark_Light_Mode()" >Turn Light OFF</button>
+        <button id="skills-button" onclick="updatePage('skills-page')">Skills</button>
+        <button id="proyects-button" onclick="updatePage('proyects-page')">Proyects</button>
+        <button id="dark-light-button" onclick="toggleLight()" >Turn Light OFF</button>
         <button id="change-language-button" onclick="changeLanguage()" >Cambiar a Español</button>
     </div>
 
-
-    <div id="home-page">
-        <div class="profile-container">
-            <img class="profile-picture" src="./img/profile.png">
-            <div class="profile-description">
-                <div class = "en">
-                <h1>Hello! My name is Donato Banegas</h1>               
-                <p> 
-                I'm an Electronic Engineering student with a growing passion for Computer Science.
-                I'm currently in the 4th/5th year of my 6-year Electronic Engineering degree.
-                Courses like 'Computer Architecture' and 'Operating Systems & Networks' sparked my
-                interest in programming and software development.
-                This is why I'm transitioning my focus towards Computer Science.<br><br>
-
-                Lately I've been reading about OOP, C++ and web development (This portfolio it's a consequence of that).
-                I've found that my background in C programming and working in more constrained environments 
-                with microcontrollers has provided me with a solid foundation. 
-                As a result, I've been able to approach new subjects in computer science with greater confidence and understanding.
-                </p>
-                </div>
-
-                <div class = "es">
-                <h1>¡Hola! Mi nombre es Donato Banegas</h1>               
-                <p> 
-                    Soy estudiante de Ingeniería Electrónica con una creciente pasión por la Informática.
-                    Actualmente estoy en 4º/5º año de mi carrera de Ingeniería Electrónica de 6 años.
-                    Materias como 'Arquitectura de Computadores' y 'Sistemas Operativos y Redes' despertaron mi
-                    Interés por la programación y el desarrollo de software.
-                    Es por eso que estoy cambiando mi enfoque hacia Ciencias de la Computación.<br><br>
-    
-                    Últimamente he estado leyendo sobre POO, C++ y desarrollo web (este portafolio es una consecuencia de eso).
-                    Descubrí que mi experiencia en programación C y trabajo en entornos más restringidos
-                    con microcontroladores me ha proporcionado una base sólida.
-                    Como resultado, he podido abordar nuevos temas de informática con mayor confianza y comprensión.
-                </p>
+    <div id="en">
+        <div id="home-page">
+            <div class="profile-container">
+                <img class="profile-picture" src="./img/profile.png">
+                <div class="profile-description">
+                    <h1>Hello! My name is Donato Banegas</h1>               
+                    <p>I'm an Electronic Engineering student with a growing passion for Computer Science. Currently, I'm in the 4th/5th year of my 6-year Electronic Engineering degree. Courses like 'Computer Architecture' and 'Operating Systems & Networks' sparked my interest in programming and software development, leading me to shift my focus towards Computer Science.</p>
+                    <p>Lately, I've been delving into reading about OOP, C++, and web development (this portfolio is a consequence of that). I've found that my background in C programming and working in more constrained environments with microcontrollers has provided me with a solid foundation. Consequently, I've been able to approach new subjects in computer science with greater confidence and understanding.</p>  
                 </div>
             </div> 
         </div>        
-    </div>
-
-
-    <div id="projects-page">   
-        <h1> Projects Page </h1>
-        <p> Under Construction</p>
-    </div>
-
-
-    <div id="education-page">
-
-        <div class="education-container">
-            <div class="formal-education">
-                <div class = "en">
-                <h1>Education</h1>
-                <h2>Formal Education</h2>
-                <h3>National University of La Plata(UNLP)</h3>
-                <ul style="list-style-type:circle;">
-                    <li> Electronics Engineering: 2017 - Present</li>
-                </ul>
-                <h3>Institute Canossiano San José (ICSJ)</h3>
-                <ul style="list-style-type:circle;">
-                    <li> High School Diploma in Natural Sciences: 2011 - 2017</li>
-                    <li> Primary School Education: 2005 - 2011</li>
-                </ul>
-                <h1>English Proficiency</h1>
-                <p>I had six years of basic English education during my high school years. From an early age, I immersed myself in the language thanks to my interest in video games and my desire to understand their content. Additionally, I regularly consume movies with audio and subtitles in English, as well as content from English-speaking YouTubers.</p>
-                <p>Currently, I am constantly immersed in the language, as I read reviews and opinions of series and movies in English on a daily basis. Due to my career, I find myself in the need to consult bibliography and technical documents written in English continuously.</p>
-                <p>During my time at university, I took a proficiency exam in English focused on technical reading comprehension. Furthermore, during the selection process at Techint, I underwent a more comprehensive exam that evaluated my skills in reading, listening, and writing in English. Below, the results obtained in said exam are detailed.</p>
-                </div>
-
-                <div class = "es">
-                    <h1>Educación</h1>
-                    <h2>Educación Formal</h2>
-                    <h3>Universidad Nacional de La Plata (UNLP)</h3>
+        <div id="education-page">
+            <div class="education-container">
+                <div class="formal-education">
+                    <h1>Education</h1>
+                    <h2>Formal Education</h2>
+                    <h3>National University of La Plata(UNLP)</h3>
                     <ul style="list-style-type:circle;">
-                        <li> Ingeniería Electrónica: 2017 - Presente</li>
+                        <li> Electronics Engineering: 2017 - Present</li>
                     </ul>
-                    <h3>Instituto Canossiano San José (ICSJ)</h3>
+                    <h3>Institute Canossiano San José (ICSJ)</h3>
                     <ul style="list-style-type:circle;">
-                        <li> Educación Secundaria: Bachiller en Ciencias Naturales: 2011 - 2017</li>
-                        <li> Educación Primaria: 2005 - 2011</li>
+                        <li> High School Diploma in Natural Sciences: 2011 - 2017</li>
+                        <li> Primary School Education: 2005 - 2011</li>
                     </ul>
-
-                    <h1>Nivel de Inglés</h1>
-                    <p>Tuve seis años de educación básica de inglés durante la secundaria. Desde una edad temprana, me sumergí en el idioma gracias a mi interés en los videojuegos y mi deseo de entender su contenido. Además, consumo regularmente películas con audio y subtítulos en inglés, así como contenido de youtubers de habla inglesa.</p>
-                    <p>En la actualidad, estoy constantemente inmerso en el idioma, ya que leo reseñas y opiniones de series y películas en inglés de manera cotidiana. Debido a mi carrera, me veo en la necesidad de consultar bibliografía y documentos técnicos escritos en inglés de forma continua.</p>
-                    <p>Durante mi tiempo en la universidad, rendí un exámen de suficiencia en inglés centrado en la comprensión de lectura técnica. Además, durante el proceso de selección en Techint, me sometí a un examen más completo que evaluaba mis habilidades en lectura, escucha y escritura en inglés. A continuación, se detallan los resultados obtenidos en dicho examen.</p>
+                    <h1>English Proficiency</h1>
+                    <p>I had six years of basic English education during high school. From an early age, I immersed myself in the language thanks to my interest in video games and my desire to understand their content. Additionally, I regularly consume movies with English audio and subtitles, as well as content from English-speaking YouTubers.</p>
+                    <p>Currently, I am constantly immersed in the language, as I read reviews and opinions of series and movies in English on a daily basis. Due to my career, I need to consult bibliography and technical documents written in English.</p>
+                    <p>During my time in university, I took a proficiency exam in English focused on technical reading comprehension. Additionally, during the selection process at Techint, I underwent a more comprehensive exam that assessed my skills in reading, listening, and writing in English.</p>
+                    
+                    <img class="versant1" src="./img/versant1-en-l.png"> 
+                    <img class="versant2" src="./img/versant2-en-l.png">
                 </div>
-
-                <img id="versant1" src="./img/versant1-en-l.png"> 
-                <img id="versant2" src="./img/versant2-en-l.png">
-
-            </div>            
-            <div class="career-progress">
-                <div class="en">
+                <div class="career-progress">
                     <h1>Career: Electronic Engineering</h1>
                     <h2>2002 Program</h2>
                     <table>
@@ -377,8 +315,54 @@
                     <p>Current progress: <span id="span-progress-value-EN"></span>%</p>
                     <p>Average Grade: <span id="span-average-grade-EN"></span></p>
                 </div>
+            </div>      
+        </div>
+        <div id="skills-page">   
+            <h1> Skills Page </h1>
+            <p> Under Construction</p>
+        </div>
+        <div id="proyects-page">   
+            <h1> Projects Page </h1>
+            <p> Under Construction</p>
+        </div>
+    </div>
 
-                <div class="es">
+    <div id="es">
+
+        <div id="inicio-page">
+            <div class="profile-container">
+                <img class="profile-picture" src="./img/profile.png">
+                <div class="profile-description">
+                    <h1>¡Hola! Mi nombre es Donato Banegas</h1>               
+                    <p>Soy estudiante de Ingeniería Electrónica con una creciente pasión por la Informática. Actualmente me encuentro en el 4to/5to año de mi carrera de Ingeniería Electrónica, la cual tiene una duración de 6 años. Cursos como 'Arquitectura de Computadoras' y 'Sistemas Operativos y Redes' han avivado mi interés en la programación y el desarrollo de software, llevándome a dirigir mi atención hacia la Informática.</p>
+                    <p>Recientemente, me he sumergido en la lectura sobre Programación Orientada a Objetos, C++ y desarrollo web (este portafolio es un resultado de ello). He descubierto que mi experiencia en programación en C y en entornos más restringidos con microcontroladores ha cimentado una base sólida. Como consecuencia, me siento más seguro y con un mejor entendimiento al abordar nuevos temas en Informática.</p>                    
+                </div> 
+            </div>    
+        </div>
+        <div id="educacion-page">
+            <div class="education-container">
+                <div class="formal-education">
+                    <h1>Educación</h1>
+                    <h2>Educación Formal</h2>
+                    <h3>Universidad Nacional de La Plata (UNLP)</h3>
+                    <ul style="list-style-type:circle;">
+                        <li> Ingeniería Electrónica: 2017 - Presente</li>
+                    </ul>
+                    <h3>Instituto Canossiano San José (ICSJ)</h3>
+                    <ul style="list-style-type:circle;">
+                        <li> Educación Secundaria: Bachiller en Ciencias Naturales: 2011 - 2017</li>
+                        <li> Educación Primaria: 2005 - 2011</li>
+                    </ul>
+
+                    <h1>Nivel de Inglés</h1>
+                    <p>Tuve seis años de educación básica de inglés durante la secundaria. Desde una edad temprana, me sumergí en el idioma gracias a mi interés en los videojuegos y mi deseo de entender su contenido. Además, consumo regularmente películas con audio y subtítulos en inglés, así como contenido de youtubers de habla inglesa.</p>
+                    <p>En la actualidad, estoy constantemente inmerso en el idioma, ya que leo reseñas y opiniones de series y películas en inglés. Debido a mi carrera, necesito consultar bibliografía y documentos técnicos escritos en inglés.</p>
+                    <p>Durante mi tiempo en la universidad, rendí un examen de suficiencia en inglés centrado en la comprensión de lectura técnica. Además, durante el proceso de selección en Techint, me sometí a un examen más completo que evaluaba mis habilidades en lectura, escucha y escritura en inglés.</p>
+                    <img class="versant1" src="./img/versant1-en-l.png"> 
+                    <img class="versant2" src="./img/versant2-en-l.png">
+
+                </div>            
+                <div class="career-progress">
                     <h1>Carrera: Ingeniería Electrónica</h1>
                     <h2>Plan 2002</h2>
                     <table id="subject-table">
@@ -645,40 +629,151 @@
                     <p>Progreso Actual: <span id="span-progress-value-ES"></span>%</p>
                     <p>Nota Promedio: <span id="span-average-grade-ES"></span></p>
                 </div>
+            </div>      
+        </div>
+        <div id="habilidades-page">
+            <div class="skills-container">
+                <div class="column"> 
+                    <h1>Habilidades Tecnológicas</h1>
+                    <p>Criterios de calificación:</p>
+                    <ul>
+                        <li>1 a 3 estrellas: Utilizo la herramienta de manera esporádica. Aún puedo profundizar mucho en su funcionamiento.</li>
+                        <li>4 a 6 estrellas: Utilizo la herramienta de forma cotidiana, aunque sé que aún puedo explorar más sus funcionalidades y seguir aprendiendo sobre su uso.</li>
+                        <li>7 a 9 estrellas: Manejo la herramienta con frecuencia y soltura, aprovechando la mayoría de sus funcionalidades con destreza.</li>
+                        <li>10 estrellas: Domino la herramienta completamente, utilizando todas sus funcionalidades de manera experta.</li>
+                    </ul>
+                    <table class="skills-table">
+                        <tr>
+                            <td>Sistema operativo: Windows</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Word</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Programación en C</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Matlab</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>IDE Visual Studio Code</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>LTSpice</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Excel</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>PowerPoint</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>IDE Code Blocks</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>LaTeX</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>IDE Arduino</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sistema operativo: Linux</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>IDE Microchip Studio</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Programación en C++</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Git</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bash</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Octave</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Programación en Javascript</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Diseño Web en HTML</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Estilos web con CSS</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Programación en Python</td>
+                            <td><span class="stars">&#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sistema Operativo: FreeRTOS</td>
+                            <td><span class="stars">&#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span></td>
+                        </tr>
+                        <!-- ¡Agrega aquí nuevas habilidades a medida que se te ocurran! -->
+                    </table>
+                </div>
+                <div class="column">
+                    <h1>Certificaciones</h1>
+                    <p>Las certificaciones provienen de cursos externos</p>
+                    <h2>Excel</h2>
+                    <img class="certificate" src="./img/certificado-excel-inicial.png">
+                </div>
+                <div class="column">
+                    <h1>Habilidades Interpersonales</h1>
+                    <p>Aquí puedes encontrar algunas de mis habilidades relacionadas con la interacción y colaboración con otras personas, junto con comentarios personales sobre cada habilidad:</p>
+                    <ul>
+                        <li>Comunicación efectiva: Siempre hago un esfuerzo consciente por comunicarme de manera efectiva, ya que entiendo que la falta de claridad en la expresión de ideas y objetivos puede ocasionar problemas en el desarrollo de proyectos. Creo firmemente que cuanto más concisas y precisas sean las comunicaciones, mejor será la comprensión y la ejecución de las tareas. Me enfoco en evitar generalidades y en transmitir información de manera clara y directa para garantizar una comunicación efectiva en todo momento.</li>
+                        <li>Trabajo en equipo: Reconozco la importancia de la colaboración para el éxito de un proyecto, aunque no estoy acostumbrado a trabajar de esta manera. Entiendo que distribuir tareas de manera efectiva y comprometerse con el equipo son fundamentales para alcanzar nuestros objetivos.</li>
+                        <li>Empatía: Considero que la empatía es esencial para construir relaciones sólidas y fomentar un ambiente colaborativo en cualquier trabajo. Creo firmemente en su capacidad para mejorar la comunicación, resolver conflictos y promover la cohesión del equipo. Estoy comprometido a practicar la empatía en todas mis interacciones para contribuir al bienestar y la eficacia del equipo y del proyecto en su conjunto.</li>
+                        <li>Resolución de conflictos: Me considero una persona pragmática, por lo tanto, cuando surgen conflictos, me gusta pensar en posibles soluciones y presentarlas todas, desde las más efectivas hasta las menos populares. Incluso si algunas soluciones pueden no ser las más populares, considero que es importante ponerlas sobre la mesa para tener en cuenta todas las opciones y evaluarlas adecuadamente. Creo que esta práctica ayuda a poner en perspectiva las demás soluciones y a encontrar la mejor manera de abordar el conflicto de manera efectiva y constructiva.</li>
+                        <li>Colaboración: Valoro enormemente los resultados que pueden lograrse a través del trabajo en equipo en proyectos de gran envergadura.</li>
+                        <li>Influencia y persuasión: Reconozco la importancia de la seriedad en las conversaciones sobre temas conflictivos. Aunque no me considero especialmente persuasivo, creo en abordar estos temas con seriedad y respeto. Creo firmemente que mediante el diálogo honesto y respetuoso, es posible llegar a acuerdos y resolver conflictos de manera efectiva.</li>
+                        <li>Liderazgo: No me siento cómodo en posiciones de liderazgo, pero puedo contribuir de manera efectiva como miembro del equipo.</li>
+                        <li>Escucha activa: La escucha activa es fundamental para una comunicación efectiva.</li>
+                        <li>Capacidad para recibir y dar retroalimentación: Reconozco la importancia fundamental de la retroalimentación para mejorar en cualquier aspecto. Aprecio la retroalimentación constructiva y siempre estoy abierto a aprender y mejorar gracias a ella.</li>
+                        <!-- Agrega aquí más habilidades interpersonales y tus comentarios personales sobre ellas -->
+                    </ul>
+                    </ul>
+                </div>
             </div>
         </div>
-
-
-        <!--
-        <div id="interest-container">
-            <h1>About me.</h1>
-            <h2>Interest, Hobbys and more.</h2>
-
-            <h3>Videogames</h3>
-            <p>One of my first and most enduring hobbies has been video games. I spent countless hours playing different games on various consoles throughout my childhood and teenage years. While I don't play as much anymore, I remain fascinated by the video game industry. Now, I'm particularly interested in how innovation and technology are shaping the market, how hardware has evolved, and how projects have grown in size, scope, and investment.  I also find the success stories of smaller-scale indie games inspiring.
-            </p>
-
-            <h3>Literature</h3>
-            <p>While I don't read constantly, when I pick up a book, I get completely immersed in the story. I love delving into the author's craft, analyzing character development, symbolism, and narrative style.  Exploring the themes and hidden messages woven into the text is a fascinating journey for me.  A truly satisfying conclusion leaves me feeling fulfilled, with all the plot lines neatly tied up.
-            </p>
-
-            <h3>Fitness</h3>
-            <p>Over the past three years, I've discovered the vastness and complexity of the fitness industry. While information is abundant, not all of it is reliable. I've learned that nutrition plays a critical role in fitness and overall health, and that even moderate daily exercise can be sufficient for maintaining good health. Discipline and setting realistic goals are key to maintaining motivation. My fitness journey has taught me the importance of finding a balance between being active and eating healthy, and I'm excited to continue learning and growing on this journey.
-            </p>
-
-            <h3>Sports</h3>
-            <p>You might expect an Argentinean to be obsessed with fútbol (soccer), but that wasn't quite the case for me. While I never considered myself a big sports fan, my growing interest in fitness has led me to appreciate the dedication and work ethic of professional athletes. In particular, I've become fascinated by the world of boxing culture. It's not that I'm a die-hard boxing fan, but the Rocky films really resonated with me. They perfectly capture the discipline and relentless drive required to succeed, not only in sports, but in all things in life.
-            </p>
-
-            <h3>Politics and Economy</h3>
-            <p>Having lived in a country with economic instability, I've witnessed the impact of fluctuating prices and social conflicts firsthand. This experience sparked a curiosity in me to understand the cause-and-effect relationships at play. Analyzing these topics, along with the various theories that attempt to explain them, is a captivating exercise for me. Perhaps it's my engineering background that fuels this desire to optimize and find solutions within complex systems.</p>
-
-
+        <div id="proyectos-page">   
+            <h1> Página de Proyectos </h1>
+            <p> Under Construction</p>
         </div>
-        -->
     </div>
 
-    <script src="script.js"></script>
-</body>
 
+
+
+
+    <div class="bottom-bar">
+        <a href="https://www.linkedin.com/in/donato-banegas-b9ab64173/" target="_blank"><img src="./img/linkedin-logo.png" alt="LinkedIn"></a>
+        <a href="mailto:donatobanegas123@gmail.com"><img src="./img/correo-logo.jpg" alt="Correo Electrónico"></a>
+    </div>
+
+    <script src="pruebas.js"></script>    
+</body>
 </html>
