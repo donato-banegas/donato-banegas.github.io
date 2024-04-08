@@ -99,13 +99,15 @@ body {
     grid-template-columns: 50% 50%;
     justify-content: center;
     text-decoration: none;
-    margin: 1% auto;
+    /*margin: 1% auto;*/
 }
 
 .formal-education {
     justify-content: center;
     align-items: center;
-    margin: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    /*margin: 2%;*/
     padding: 5%;
     /*border: 2px grey solid;*/
 }
@@ -117,7 +119,9 @@ body {
 
 .career-progress {
     padding: 5%;
-    margin:2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    /*margin:2%;*/
     /*border: 2px grey solid; */
 }
 
