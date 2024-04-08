@@ -20,7 +20,7 @@ function updateButtonColor(pageId) {
   
   if (currentButton) {
     // Establecemos el color de fondo del botón actual a verde
-    currentButton.style.backgroundColor = "green";
+    currentButton.style.backgroundColor = "#98fb98";
   } else {
     console.error("No se encontró ningún botón correspondiente a la página:", pageId);
   }
@@ -28,7 +28,9 @@ function updateButtonColor(pageId) {
 
 function renderPage(pageId) {
 
-  let elementIds = ["home-page", "education-page", "proyects-page", "inicio-page","educacion-page","proyectos-page","skills-page","habilidades-page"];
+  let elementIds = ["home-page", "education-page", "proyects-page", "inicio-page",
+  "educacion-page","proyectos-page","skills-page",
+  "habilidades-page","certificados-page","certificates-page"];
 
   // Ocultar todos los elementos de la lista
   elementIds.forEach(function(elementId) {
@@ -65,6 +67,8 @@ function translateId(pageId){
         return "proyectos-page";
       case "skills-page":
         return "habilidades-page";
+      case "certificates-page":
+        return "certificados-page";
     }
   } else {
     return pageId;
@@ -114,6 +118,7 @@ function changeLanguage(){
     document.getElementById("home-button").innerText = "Inicio";
     document.getElementById("education-button").innerText = "Educación";
     document.getElementById("skills-button").innerText = "Habilidades";
+    document.getElementById("certificates-button").innerText = "Certificados";
     document.getElementById("proyects-button").innerText = "Proyectos";
     document.getElementById("dark-light-button").innerText = lightState === "ON" ? "Apagar luz" : "Encender luz";
     document.getElementById("change-language-button").innerText = "Switch to English";
@@ -123,6 +128,7 @@ function changeLanguage(){
     document.getElementById("home-button").innerText = "Home";
     document.getElementById("education-button").innerText = "Education";
     document.getElementById("skills-button").innerText = "Skills";
+    document.getElementById("certificates-button").innerText = "Certificates";
     document.getElementById("proyects-button").innerText = "Proyects";
     document.getElementById("dark-light-button").innerText = lightState === "ON" ? "Turn Light OFF" : "Turn Light ON";
     document.getElementById("change-language-button").innerText = "Cambiar a Español";
