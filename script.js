@@ -9,7 +9,7 @@ function updateButtonColor(pageId) {
 
   buttons.forEach((button, index) => {
     // Reiniciamos el color de fondo solo de los primeros cuatro botones
-    if (index < 4) {
+    if (index < 5) {
       button.style.backgroundColor = "white";
     }
   });
@@ -28,9 +28,10 @@ function updateButtonColor(pageId) {
 
 function renderPage(pageId) {
 
-  let elementIds = ["home-page", "education-page", "proyects-page", "inicio-page",
-  "educacion-page","proyectos-page","skills-page",
-  "habilidades-page","certificados-page","certificates-page"];
+  let elementIds = ["home-page", "education-page", "proyects-page",
+  "inicio-page","educacion-page","proyectos-page",
+  "skills-page","habilidades-page","certificados-page",
+  "certificates-page"];
 
   // Ocultar todos los elementos de la lista
   elementIds.forEach(function(elementId) {
