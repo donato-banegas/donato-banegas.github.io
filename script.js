@@ -138,7 +138,7 @@ function toggleLight(){
   toggleButtonId.style.backgroundColor = (lightState === "ON") ? 'yellow' : 'white';
 
   // Cambiar el estilo del cuerpo (body)
-  body.style.backgroundColor = (lightState === "ON") ? 'dimgray' : 'whitesmoke';
+  body.style.backgroundColor = (lightState === "ON") ? '#121212' : 'whitesmoke';
   body.style.color = (lightState === "ON") ? 'whitesmoke' : 'black';
 
   // Cambiar el texto del botón
